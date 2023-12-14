@@ -2,7 +2,7 @@
   {
     "id": 0,
     "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-    "title": "Пепперони Фреш с перцем",
+    "title": "Пепперони с перцем",
     "types": [0, 1],
     "sizes": [26, 30, 40],
     "price": 803,
@@ -101,21 +101,22 @@
   },
   {
     "id": 10,
-    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
-    "title": "Овощи и грибы 🌱",
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/f8bcc0d18f5a4817a720a159f0f8c37c_366x366.webp",
+    "title": "Жюльен",
     "types": [0, 1],
     "sizes": [26, 30, 40],
-    "price": 285,
+    "price": 509,
     "category": 5,
     "rating": 7
   },
+
   {
     "id": 11,
-    "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
-    "title": "Овощи и грибы 🌱",
+    "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/6046174c06e440299c4e7117a8ecfea4_366x366.webp",
+    "title": "Песто",
     "types": [0, 1],
     "sizes": [26, 30, 40],
-    "price": 285,
+    "price": 419,
     "category": 5,
     "rating": 7
   }
