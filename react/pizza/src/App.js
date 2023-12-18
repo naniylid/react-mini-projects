@@ -1,11 +1,10 @@
 import React from 'react';
 import './scss/app.scss';
 import Header from './components/Header';
-import Categories from './components/Categoties';
-import Sort from './components/Sort';
-import PizzaBlock from './components/PizzaBlock';
-
-import pizzas from './assets/pizza.json/pizzas-list.json';
+import { Home } from './pages/Home';
+import Cart from './pages/Cart';
+import { NotFound } from './pages/NotFound';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -13,16 +12,11 @@ function App() {
       <Header />
       <div className='content'>
         <div className='container'>
-          <div className='content__top'>
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className='content__title'>Все пиццы</h2>
-          <div className='content__items'>
-            {pizzas.map((obj) => (
-              <PizzaBlock key={obj.id} {...obj} />
-            ))}
-          </div>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </div>
