@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { setCategoryId } from '../redux/slices/filterSlice';
 import Categories from '../components/Categoties';
 import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
@@ -8,19 +10,25 @@ import { Pagination } from '../components/Pagination';
 import { SearchContext } from '../App';
 
 export const Home = () => {
+  const dispatch = useDispatch();
+  const { categoryId, sort } = useSelector((state) => state.filterSlice);
+  const sortType = sort.sortProperty;
+
   const { searchValue } = React.useContext(SearchContext);
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [categoryId, setCategoryId] = React.useState(0);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [sortType, setSortType] = React.useState({ name: 'популярности', sortProperty: 'rating' });
+
+  const onClickCategory = (id) => {
+    dispatch(setCategoryId(id));
+  };
 
   React.useEffect(() => {
     setIsLoading(true);
 
     const category = categoryId > 0 ? `category=${categoryId}` : '';
-    const sortBy = sortType.sortProperty.replace('-', '');
-    const order = sortType.sortProperty.includes('-') ? 'убывание' : 'возрастание';
+    const sortBy = sortType.replace('-', '');
+    const order = sortType.includes('-') ? 'убывание' : 'возрастание';
     const search = searchValue ? `search=${searchValue}` : '';
 
     fetch(
@@ -42,8 +50,8 @@ export const Home = () => {
   return (
     <div className='container'>
       <div className='content__top'>
-        <Categories value={categoryId} onClickFilter={(id) => setCategoryId(id)} />
-        <Sort value={sortType} onClickSort={(id) => setSortType(id)} />
+        <Categories value={categoryId} onClickFilter={onClickCategory} />
+        <Sort />
       </div>
       <h2 className='content__title'>Все пиццы</h2>
       <div className='content__items'>{isLoading ? skeletons : pizzas}</div>
