@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './scss/app.scss';
@@ -8,7 +7,7 @@ import MainLayout from './layouts/MainLayout';
 import { Home } from './pages/Home';
 import Cart from './pages/Cart';
 import { NotFound } from './pages/NotFound';
-import FullPizza from './pages/FullPizza';
+import FullPizza from './pages/FullPizza.tsx';
 
 function App() {
   return (
