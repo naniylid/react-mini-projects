@@ -19,7 +19,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, title, type, price, count, imag
     dispatch(
       addPizza({
         id,
-      }),
+      } as CartItemProps),
     );
   };
 

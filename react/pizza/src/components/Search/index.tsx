@@ -17,13 +17,13 @@ export const Search = () => {
   };
 
   const updateSearchValue = React.useCallback(
-    debounce((str: any) => {
+    debounce((str: string) => {
       dispatch(setSearchValue(str));
     }, 250),
     [],
   );
 
-  const onChangeInput = (event) => {
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };

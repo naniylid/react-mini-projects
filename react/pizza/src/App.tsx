@@ -7,7 +7,7 @@ import MainLayout from './layouts/MainLayout';
 import { Home } from './pages/Home';
 import Cart from './pages/Cart';
 import { NotFound } from './pages/NotFound';
-import FullPizza from './pages/FullPizza.tsx';
+import FullPizza from './pages/FullPizza';
 
 function App() {
   return (
