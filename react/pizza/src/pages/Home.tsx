@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import qs from 'qs';
 import { useSelector } from 'react-redux';
 
-import {
-  selectFilterSlice,
-  setCategoryId,
-  setCurrentPage,
-  setFilters,
-} from '../redux/slices/filterSlice';
-import { SearchPizzaParams, fetchPizzas, selectPizzaSlice } from '../redux/slices/pizzasSlice';
+import { setCategoryId, setCurrentPage, setFilters } from '../redux/filter/slice';
+import { selectFilterSlice } from '../redux/filter/selectors';
+import { fetchPizzas } from '../redux/pizza/slice';
+import { SearchPizzaParams } from '../redux/pizza/types';
+import { selectPizzaSlice } from '../redux/pizza/selectors';
 import { useAppDispatch } from '../redux/store';
 
 //Components
@@ -97,11 +95,7 @@ export const Home: React.FC = () => {
     isSearch.current = false;
   }, [categoryId, sortType, searchValue, currentPage]);
 
-  const pizzas = items.map((obj: any) => (
-    <Link key={obj.id} to={`/pizza/${obj.id}`}>
-      <PizzaBlock {...obj} />
-    </Link>
-  ));
+  const pizzas = items.map((obj: any) => <PizzaBlock {...obj} key={obj.id} />);
 
   const skeletons = [...new Array(12)].map((_, index) => <Skeleton key={index} />);
 

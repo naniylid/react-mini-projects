@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setSort, SortPropertyEnum, Sort } from '../redux/slices/filterSlice';
+
+import { setSort } from '../redux/filter/slice';
+import { SortPropertyEnum } from '../redux/filter/types';
+import { SortType } from '../redux/filter/types';
 
 type SortItem = {
   name: string;
@@ -8,7 +11,7 @@ type SortItem = {
 };
 
 type SortPopup = {
-  value: Sort;
+  value: SortType;
 };
 
 export const sortList: SortItem[] = [
