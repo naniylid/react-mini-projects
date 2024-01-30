@@ -11,14 +11,14 @@ import { selectPizzaSlice } from '../redux/pizza/selectors';
 import { useAppDispatch } from '../redux/store';
 
 //Components
-import Categories from '../components/Categoties';
-import Sort from '../components/Sort';
 import { sortList } from '../components/Sort';
-import PizzaBlock from '../components/PizzaBlock';
-import Skeleton from '../components/PizzaBlock/Skeleton';
-import { Pagination } from '../components/Pagination';
+import { Skeleton, PizzaBlock, Pagination, Sort, Categories } from '../components';
 
 export const Home: React.FC = () => {
+  import('../utils/math').then((math) => {
+    console.log(math.add(16, 26));
+  });
+
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
