@@ -15,10 +15,6 @@ import { sortList } from '../components/Sort';
 import { Skeleton, PizzaBlock, Pagination, Sort, Categories } from '../components';
 
 export const Home: React.FC = () => {
-  import('../utils/math').then((math) => {
-    console.log(math.add(16, 26));
-  });
-
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -42,7 +38,7 @@ export const Home: React.FC = () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const sortBy = sortType.replace('-', '');
     const order = sortType.includes('-') ? 'asc' : 'desc';
-    const search = searchValue ? `search=${searchValue}` : '';
+    const search = searchValue;
 
     dispatch(
       //Бизнес логика получения пицц
@@ -54,6 +50,7 @@ export const Home: React.FC = () => {
         search,
       }),
     );
+    window.scrollTo(0, 0);
   };
 
   React.useEffect(() => {
@@ -73,7 +70,7 @@ export const Home: React.FC = () => {
     }
   }, []);
 
-  //Если изменили параметры и был первый рендер
+  // //Если изменили параметры и был первый рендер
   React.useEffect(() => {
     if (isMounted.current) {
       const queryString = qs.stringify({
@@ -86,7 +83,7 @@ export const Home: React.FC = () => {
     isMounted.current = true;
   }, [categoryId, sortType, searchValue, currentPage]);
 
-  //Если был первый рендер, то запрашиваем пиццы
+  // //Если был первый рендер, то запрашиваем пиццы
   React.useEffect(() => {
     window.scrollTo(0, 0);
     if (!isSearch.current) {
