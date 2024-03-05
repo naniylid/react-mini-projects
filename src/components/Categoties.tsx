@@ -13,7 +13,7 @@ const Categories: React.FC<CategoriesProps> = React.memo(({ value, onClickFilter
       <ul>
         {categories.map((name, i) => (
           <li key={i} onClick={() => onClickFilter(i)} className={value === i ? 'active' : ''}>
-            {name}
+            <button className={value === i ? 'active' : ''}>{name}</button>
           </li>
         ))}
       </ul>

@@ -41,9 +41,21 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 910px) {
   .root {
-    left: 10px;
+    left: 20px;
     top: 20px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .root {
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 980px) {
+  .root {
+    margin-left: 170px;
   }
 }

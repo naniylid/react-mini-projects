@@ -35,7 +35,7 @@ export const Home: React.FC = () => {
   };
 
   const getPizzas = async () => {
-    const category = categoryId > 0 ? `category=${categoryId}` : '';
+    const category = categoryId > 0 ? String(categoryId) : '';
     const sortBy = sortType.replace('-', '');
     const order = sortType.includes('-') ? 'asc' : 'desc';
     const search = searchValue;
