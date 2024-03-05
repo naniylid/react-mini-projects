@@ -17,4 +17,4 @@
 
 ![image](https://github.com/naniylid/react-pizza/assets/116672516/81ac5f3e-a119-472e-be0d-94b30aeac307)
 
-> > > > > > > 3e3e0989063114e8e3e79fa7d63bccd21158f373
+
